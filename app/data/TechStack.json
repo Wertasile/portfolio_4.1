@@ -1,0 +1,10 @@
+[
+    { "src": "reactimg", "name": "React" },
+    { "src": "nextimg", "name": "NextJS" },
+    { "src": "blazorimg", "name": "Blazor" },
+    { "src": "nodeimg", "name": "NodeJS" },
+    { "src": "mongodbimg", "name": "MongoDB" },
+    { "src": "awsimg", "name": "AWS" },
+    { "src": "mssqlimg", "name": "SQL" }
+  ]
+  

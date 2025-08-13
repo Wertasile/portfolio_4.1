@@ -1,0 +1,20 @@
+[
+    {
+        "title":"Freelance Developer",
+        "year":"June 2025 - Present",
+        "tags":["ReactJS"],
+        "description":"Working with local and Small Businesses with web solutions (websites and apps), helping them improve their reach and user engagement"
+    },
+    {
+        "title":"IT Support Staff",
+        "year":"August 2024 - March 2025",
+        "tags":["ITSM", "Azure", "Entra ID"],
+        "description":"Worked with ITSM (IT Support Management) Tools to provide users with Hardware, Software and Networking solutions either remotely or in-person. Worked with a Team of Analysts to esscalate and deal with security issues as well. Involved with the maintenance of systems across campus."
+    },
+    {
+        "title":"Computer Engineering",
+        "year":"June 2021-2024",
+        "tags":["Web Development", "Mobile App Development", "Embedded Hardware and Control Systems (FPGA)", "Sensors and Networks", "High Performance Computers", "Advanced Mathematics"],
+        "description":"Achieved a First Class Bachelor's in Computer Engineering"
+    }
+]

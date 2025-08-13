@@ -1,0 +1,54 @@
+[
+    {
+      "header": "Fadah Al Doha",
+      "description": "Application built for Client Fadah Al Doha, a Trading and Contracting Company. Pages designed for all of their Services and Products they supply along with contact capabilities.",
+      "img": "/Images/Fadah-Al-Doha-page.png",
+      "techstack": ["NextJS"],
+      "website": "https://fadah-al-doha.vercel.app/",
+      "github": "https://github.com/Wertasile/Troupe",
+      "client": "Fadah Al Doha",
+      "year": 2025
+    },
+    {
+      "header": "Troupe",
+      "description": "Chatting Application built using the MERN stack. Personal project built to learn Socket-io, Multimedia storage and sharing.",
+      "img": "/Images/Troupe-page.jpg",
+      "techstack": ["MongoDB" , "ExpressJS" , "React" , "NodeJS"],
+      "website": "https://troupe-nu.vercel.app/",
+      "github": "https://github.com/Wertasile/Troupe",
+      "client": "Personal Project",
+      "year": 2025
+    },
+    {
+      "header": "EasyNote",
+      "description": "Note Taking Application built using C# Blazor Web Assembly for the Frontend. Various AWS Services such as Lambda, API Gateway, Cognito, S3 were used for storage, authentication and api calls.",
+      "img": "/Images/aws-note-app.jpg",
+      "techstack": ["Blazor WASM" ," AWS (BackEnd)"],
+      "website": "https://eznoteapp.netlify.app/",
+      "github": "https://github.com/Wertasile/EasyNote",
+      "client": "Personal Project",
+      "year": 2024
+    },
+    {
+      "header": "WorldShare",
+      "description": "Social Media Application built in NextJS. Supported by Google Cloud Platform for authentication, make use of serverless APIs to securely store user and post data in a MongoDB database.",
+      "img": "/Images/WorldShare-page.jpg",
+      "techstack": ["MongoDB", "NextJS"],
+      "website": "https://ai-prompt-tool-inky.vercel.app/",
+      "github": "https://github.com/Wertasile/ai_prompt_tool?tab=readme-ov-file",
+      "client": "Personal Project",
+      "year": 2024
+    },
+    {
+      "header": "Moviemania",
+      "description": "Movie Catalogue",
+      "img": "/Images/Moviemania-page.jpg",
+      "techstack": ["JavaScript" , "TMDB-API"],
+      "website": "https://wertasile.github.io/Movie-Web-Catalogue.github.io/",
+      "github": "https://github.com/Wertasile/Movie-Web-Catalogue.github.io?tab=readme-ov-file",
+      "client": "Personal Project",
+      "year": 2022
+    }
+    
+  ]
+  

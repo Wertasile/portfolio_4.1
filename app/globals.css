@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #EBE9E2;
   --foreground: #171717;
+  box-sizing: border-box;
 }
 
 @theme inline {
@@ -12,15 +13,74 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{font-size: 4.75rem; }
+
+h2{font-size: 2.5rem;}
+
+h3{font-size: 2;}
+
+p{color: #1a1a1ac0}
+
+.content-tiles{
+  display: grid;
+  gap: 16px;
+  padding: 48px;
+  grid-template-columns: repeat(auto-fit, minmax(166px, 1fr));
+  grid-auto-flow: dense;
+}
+
+.content-tiles > div{
+  padding: 24px;
+  border-radius: 1rem;
+  transition: transform ease-in-out 300ms ;
+}
+
+.content-tiles > div:hover{
+  transform: scale(1.05);
+}
+
+label{display: none; height: 1px;}
+
+input, textarea{
+  width: stretch;
+  padding: 10px;
+  background-color: #6AB487;
+  border-radius: 1rem;
+}
+
+.badge{
+  border-radius: 1rem;
+  width: 200px;
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  padding: 8px;
+  border-radius: 1rem;
+}
+
+.glow{
+  animation: infinite 2s glowup ease-in-out;
+}
+
+@keyframes glowup{
+  0% {text-shadow:  none;}
+  50%{
+    text-shadow:  0 0 2px rgb(119, 119, 119),
+                  0 0 5px rgb(119, 119, 119),
+                  0 0 8px rgb(119, 119, 119);
+  }
+  100%{text-shadow: none;}
 }
