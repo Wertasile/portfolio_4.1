@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { v4 as generateID } from "uuid";
 //👇🏻 imports the email template
-import TicketCreated from "../../emails/TicketCreated.jsx";
+import TicketCreated from "../emails/TicketCreated.jsx";
 //👇🏻 imports Resend
 import { Resend } from "resend";
 
