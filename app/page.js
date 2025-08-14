@@ -182,7 +182,7 @@ export default function Home() {
 
         </div>
 
-        <div className="text-right flex flex-col justify-end col-span-3 sm:col-span-2 row-span-2 bg-white bg-[]" style={{backgroundImage:`url("/AREmoji.jpg")`, backgroundPosition:'left', backgroundSize:'contain', backgroundRepeat:"no-repeat"}}>
+        <div className="text-right text-white flex flex-col justify-end col-span-3 sm:col-span-2 row-span-2 bg-[#1A1A1A]" style={{backgroundImage:`url("/AREmoji.jpg")`, backgroundPosition:'left', backgroundSize:'contain', backgroundRepeat:"no-repeat"}}>
           <h2 className="">Ahmed</h2>
           <h3>Developer</h3>
         </div>
@@ -222,8 +222,16 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="col-span-3 row-span-3 bg-[#E5A8DF]">
+        <div className="col-span-3 row-span-3 bg-[#E5A8DF] flex flex-col gap-2">
           <h2>About Me</h2>
+          <p className="text-justify">I am currently working as a Freelance Developer for SMEs and local businesses. I worked previously as an IT Support Staff which enhanced my communication skills,
+              Hardware and Software troubleshooting skills and I became familiar with Azure and IT Service Management Softwares. However, I always loved Coding and providing creative solutions,
+              hence why I pursue my current path, gaining real world experience and looking to start my Career as a Developer in the Corporate World.
+          </p>
+          <p className="text-justify">
+            While most of my experience comes from web and application Development, I also have worked with Embedded Systems and FPGAs as well as creation of Wireless Sensor Modules.
+            I have a strong background in Advanced Mathematics having built digital filters.
+          </p>
         </div>
         
         <div className="col-span-2 row-span-2 bg-[#91C6CA]">
