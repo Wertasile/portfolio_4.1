@@ -267,9 +267,9 @@ export default function Home() {
         <div className="col-span-3 sm:col-span-2 row-span-1 bg-[#DFC202]">
           <h2>Socials</h2>
           <div className="flex flex-row gap-3 ustify-between p-2">
-            <div className="text-black rounded-4xl py-2 px-5 bg-[#EBD74F]"><a href="https://www.linkedin.com/in/ahmed-mohamed-haniffa-arfan-989267202/">LinkedIn</a></div>
-            <div className="text-black rounded-4xl py-2 px-5 bg-[#EBD74F]"><a href="mailto:ahmedmharfan@gmail.com">Email</a></div>
-            <div className="text-black rounded-4xl py-2 px-5 bg-[#EBD74F]"><a href="https://github.com/Wertasile">GitHub</a></div>
+            <div className="text-black rounded-4xl py-2 px-3 sm:px-5 bg-[#EBD74F]"><a href="https://www.linkedin.com/in/ahmed-mohamed-haniffa-arfan-989267202/">LinkedIn</a></div>
+            <div className="text-black rounded-4xl py-2 px-3 sm:px-5 bg-[#EBD74F]"><a href="mailto:ahmedmharfan@gmail.com">Email</a></div>
+            <div className="text-black rounded-4xl py-2 px-3 sm:px-5 bg-[#EBD74F]"><a href="https://github.com/Wertasile">GitHub</a></div>
           </div>
         </div>
 
