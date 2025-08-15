@@ -51,11 +51,17 @@ export default function Home() {
           {
             
             <div index={0} className="max-w-[800px] -left-[400px] max-h-[90vh] overflow-y-auto bg-white rounded-3xl m-5 p-6 sm:px-20" onClick={(e) => e.stopPropagation()}>
-            <h1 className="mx-2">Projects</h1>
+            
+            <div className="flex justify-between gap-2">
+              <h2>Projects</h2>
+              <h3 onClick={removeTab}><b>X</b></h3>
+            </div>  
 
             {Projectdata.map( (project, index) => (
               <div className="flex gap-5 p-2 flex-col py-20 border-b-[2px] border-solid border-blue-900" key={index}>
-                <h2>{project.header}</h2>
+
+                <h3>{project.header}</h3>
+
                 <div className="flex flex-row gap-2">
                   {project.techstack.map((tech, i) => (
                     <div key={i} className="text-black rounded-4xl p-2 bg-[#EBE9E2]">
@@ -63,16 +69,20 @@ export default function Home() {
                     </div>
                   ))}
                 </div>
+
                 <div>
                   <img className="rounded-xl shadow-lg" src={project.img} alt={`${project.header}'s image`}/>
                 </div>
+
                 <p>
                   {project.description}
                 </p>
+
                 <div className="flex flex-row gap-2">
                     <a href={project.github} className="text-black border-black border-[1px] border-solid rounded-xl p-2 hover:bg-black hover:text-white duration-300 ease-in-out">Github</a>
                     <a href={project.website} className="text-black border-black border-[1px] border-solid rounded-xl p-2 hover:bg-black hover:text-white duration-300 ease-in-out">Website</a>
                 </div>
+
               </div>
             ))}
             </div>
@@ -86,18 +96,21 @@ export default function Home() {
           {
             
             <div index={1} className="max-w-[800px] max-h-[90vh] overflow-y-auto bg-white rounded-3xl m-5 p-6" onClick={(e) => e.stopPropagation()}>
-            <h1>
-              Education & Career
-            </h1>
+
+            <div className="flex justify-between gap-2">
+              <h2>Education and Career</h2>
+              <h3 onClick={removeTab}><b>X</b></h3>
+            </div>
+
             {EduCareer.map( (edu, index) => (
               <div className="flex gap-5 p-2 flex-col py-20 border-b-[2px] border-solid border-blue-900" key={index}>
-                <div className="flex flex-row justify-between items-center">
-                  <h2>{edu.title}</h2>
-                  <h3>{edu.year}</h3>
+                <div className="flex flex-col sm:flex-row justify-between items-center">
+                  <h3>{edu.title}</h3>
+                  <i>{edu.year}</i>
                 </div>  
                 <div className="flex flex-row gap-2 flex-wrap">
                   {edu.tags.map((tag, i) => (
-                    <div key={i} className="text-black rounded-4xl py-2 px-5 bg-[#EBE9E2]">
+                    <div key={i} className="text-black rounded-sm sm:rounded-4xl text-xs sm:text-baser p-1 sm:py-2 sm:px-5 bg-[#EBE9E2]">
                       {tag}
                     </div>
                   ))}
