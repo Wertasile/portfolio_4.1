@@ -50,7 +50,7 @@ export default function Home() {
           
           {
             
-            <div index={0} className="max-w-[800px] -left-[400px] max-h-[90vh] overflow-y-auto bg-white rounded-3xl m-5 p-6 px-20" onClick={(e) => e.stopPropagation()}>
+            <div index={0} className="max-w-[800px] -left-[400px] max-h-[90vh] overflow-y-auto bg-white rounded-3xl m-5 p-6 sm:px-20" onClick={(e) => e.stopPropagation()}>
             <h1 className="mx-2">Projects</h1>
 
             {Projectdata.map( (project, index) => (
@@ -132,15 +132,15 @@ export default function Home() {
 
       {/* MAIN PAGE WITH TILES */}
 
-      <h1 className="px-14">Ahmed</h1>
+      <h1 className="px-14 hidden sm:block">Ahmed</h1>
       <div className="content-tiles p-6">
 
-        <div className="col-span-2 row-span-1 bg-[#93B2E0] flex flex-row justify-between ">
+        <div className="col-span-3 sm:col-span-2 row-span-1 bg-[#93B2E0] flex flex-row justify-between ">
           <h2>View CV</h2>
           <h2 className="glow" onClick={() => handleTab(2)}>+</h2>
         </div>
 
-        <div className="col-span-1 row-span-1 bg-[#DFC202]">
+        <div className="hidden sm:block col-span-1 row-span-1 bg-[#DFC202]">
           <h2>STAR</h2>
         </div>
           
@@ -209,7 +209,7 @@ export default function Home() {
           </form>
         </div>
 
-        <div className="col-span-2 row-span-3 bg-[#91C6CA]">
+        <div className="col-span-3 sm:col-span-2 row-span-3 bg-[#91C6CA]">
           <h2>Tech Stack</h2>
           <div className="flex flex-col gap-2">
             <div className="badge bg-[#68B1B6]">ReactJS</div>
@@ -234,7 +234,7 @@ export default function Home() {
           </p>
         </div>
         
-        <div className="col-span-2 row-span-2 bg-[#91C6CA]">
+        <div className="col-span-3 sm:col-span-2 row-span-2 bg-[#91C6CA]">
           <div className="flex flex-col">
             <div className="flex justify-between">
               <h2>Career</h2>
@@ -251,7 +251,7 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="col-span-2 row-span-1 bg-[#DFC202]">
+        <div className="col-span-3 sm:col-span-2 row-span-1 bg-[#DFC202]">
           <h2>Socials</h2>
           <div className="flex flex-row gap-3 ustify-between p-2">
             <div className="text-black rounded-4xl py-2 px-5 bg-[#EBD74F]"><a href="https://www.linkedin.com/in/ahmed-mohamed-haniffa-arfan-989267202/">LinkedIn</a></div>
