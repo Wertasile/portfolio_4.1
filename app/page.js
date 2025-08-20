@@ -3,10 +3,30 @@
 import Image from "next/image";
 import Projectdata from './data/Projectdata.json'
 import EduCareer from './data/EduCareer.json'
-import { useState } from "react";
+import { useRef, useState } from "react";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap"
 
 export default function Home() {
+
+  const contentRef = useRef()
+
+  useGSAP(() => {
+    const tiles = gsap.utils.toArray(contentRef.current.children)
+
+    gsap.fromTo(tiles,
+      {
+        opacity: 0,
+        y: 20
+      },{
+        opacity: 1,
+        y:0,
+        stagger: 0.2,
+        ease: "power2.out"
+      }
+    )
+  })
 
   const [tab,setTab] = useState(new Set())
   const [tabOpen, setTabOpen] = useState(false)
@@ -146,7 +166,7 @@ export default function Home() {
       {/* MAIN PAGE WITH TILES */}
 
       <h1 className="px-14 hidden sm:block">Ahmed</h1>
-      <div className="content-tiles p-6">
+      <div ref={contentRef} className="content-tiles p-6">
 
         <div className="col-span-3 sm:col-span-2 row-span-1 bg-[#93B2E0] flex flex-row justify-between ">
           <h2>View CV</h2>
@@ -154,7 +174,7 @@ export default function Home() {
         </div>
 
         <div className="hidden sm:block col-span-1 row-span-1 bg-[#DFC202]">
-          <h2>STAR</h2>
+          
         </div>
           
         <div className="col-span-3 justify-between row-span-2 bg-[#9A9CD4]">
