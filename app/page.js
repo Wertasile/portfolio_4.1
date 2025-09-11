@@ -12,6 +12,9 @@ export default function Home() {
 
   const contentRef = useRef()
 
+  const [tab, setTab] = useState(null)
+  const animationsRef = useRef(new Map())
+
   useGSAP(() => {
     const tiles = gsap.utils.toArray(contentRef.current.children)
 
@@ -26,36 +29,41 @@ export default function Home() {
         ease: "power2.out"
       }
     )
-  })
 
-  const [tab,setTab] = useState(new Set())
-  const [tabOpen, setTabOpen] = useState(false)
+    const tabs = gsap.utils.toArray(".tabs")
+
+    tabs.forEach((tab, index) => {
+
+      const tabAnimation = gsap.fromTo(tab,
+        { x: "-100%" },   // start off to the right
+        { x: "0%", duration: 0.5, ease: "power2.inOut", paused: true }
+      );
+
+      tabAnimation.reverse()
+      animationsRef.current.set(index, tabAnimation)
+
+    })
+
+  })
 
   function handleTab(index){
 
-    setTab( (prev) => {
-      let newSet = new Set(prev)
-      if (newSet.has(index)){
-        setTabOpen(false)
-        newSet.delete(index)
-      } else{
-        setTabOpen(true)
-        newSet.add(index)
+    if (tab === index){
+      animationsRef.current.get(index).reverse()
+      setTab(null)
+    } else{
+      if (tab !== null){
+        animationsRef.current.get(tab).reverse()
       }
-
-      return newSet
-    })
+      animationsRef.current.get(index).play()
+      setTab(index)
+    }
   }
 
-  function removeTab(event) {
+  function removeTab(index) {
     
-
-    setTab( (prev) => {
-      let newTab = new Set()
-      return newTab
-    })
-
-    setTabOpen(false)
+    animationsRef.current.get(index).reverse()
+    setTab(null)
   }
 
   
@@ -63,104 +71,99 @@ export default function Home() {
   return (
     <>
 
-      {/* TAB APPEARING FROM SIDE ON CLICK */}
+      {/* TAB 0 APPEARING FROM SIDE ON CLICK */}
+      
+      <div className=" fixed h-full w-full z-1 tabs " onClick={() => removeTab(0)}>
 
-      {(tabOpen && tab.has(0)) && (
-        <div className="bg-[rgba(0,0,0,0.5)] fixed h-full w-full z-1" onClick={removeTab}>
+          <div className="max-w-[800px] h-[100vh] overflow-y-auto bg-white p-6 sm:px-20" onClick={(e) => e.stopPropagation()}>
           
-          {
-            
-            <div index={0} className="max-w-[800px] -left-[400px] max-h-[90vh] overflow-y-auto bg-white rounded-3xl m-5 p-6 sm:px-20" onClick={(e) => e.stopPropagation()}>
-            
-            <div className="flex justify-between gap-2">
-              <h2>Projects</h2>
-              <h3 onClick={removeTab}><b>X</b></h3>
-            </div>  
+          <div className="flex justify-between gap-2">
+            <h2>Projects</h2>
+            <h3 className="cursor-pointer" onClick={() => removeTab(0)}><b>X</b></h3>
+          </div>  
 
-            {Projectdata.map( (project, index) => (
-              <div className="flex gap-5 p-2 flex-col py-20 border-b-[2px] border-solid border-blue-900" key={index}>
+          {Projectdata.map( (project, index) => (
+            <div className="flex gap-5 p-2 flex-col py-20 border-b-[2px] border-solid border-blue-900" key={index}>
 
-                <h3>{project.header}</h3>
+              <h3>{project.header}</h3>
 
-                <div className="flex flex-row gap-2">
-                  {project.techstack.map((tech, i) => (
-                    <div key={i} className="text-black rounded-4xl p-2 bg-[#EBE9E2]">
-                      {tech}
-                    </div>
-                  ))}
-                </div>
-
-                <div>
-                  <img className="rounded-xl shadow-lg" src={project.img} alt={`${project.header}'s image`}/>
-                </div>
-
-                <p>
-                  {project.description}
-                </p>
-
-                <div className="flex flex-row gap-2">
-                    <a href={project.github} className="text-black border-black border-[1px] border-solid rounded-xl p-2 hover:bg-black hover:text-white duration-300 ease-in-out">Github</a>
-                    <a href={project.website} className="text-black border-black border-[1px] border-solid rounded-xl p-2 hover:bg-black hover:text-white duration-300 ease-in-out">Website</a>
-                </div>
-
+              <div className="flex flex-row gap-2">
+                {project.techstack.map((tech, i) => (
+                  <div key={i} className="text-black rounded-4xl p-2 bg-[#EBE9E2]">
+                    {tech}
+                  </div>
+                ))}
               </div>
-            ))}
-            </div>
-        
-          }
-        </div>
-      )}
 
-      {(tabOpen && tab.has(1)) && (
-        <div className="bg-[rgba(0,0,0,0.5)] fixed h-full w-full z-1" onClick={removeTab}>
-          {
-            
-            <div index={1} className="max-w-[800px] max-h-[90vh] overflow-y-auto bg-white rounded-3xl m-5 p-6" onClick={(e) => e.stopPropagation()}>
-
-            <div className="flex justify-between gap-2">
-              <h2>Education and Career</h2>
-              <h3 onClick={removeTab}><b>X</b></h3>
-            </div>
-
-            {EduCareer.map( (edu, index) => (
-              <div className="flex gap-5 p-2 flex-col py-20 border-b-[2px] border-solid border-blue-900" key={index}>
-                <div className="flex flex-col sm:flex-row justify-between items-center">
-                  <h3>{edu.title}</h3>
-                  <i>{edu.year}</i>
-                </div>  
-                <div className="flex flex-row gap-2 flex-wrap">
-                  {edu.tags.map((tag, i) => (
-                    <div key={i} className="text-black rounded-sm sm:rounded-4xl text-xs sm:text-baser p-1 sm:py-2 sm:px-5 bg-[#EBE9E2]">
-                      {tag}
-                    </div>
-                  ))}
-                </div>
-                <p>
-                  {edu.description}
-                </p>
-        
+              <div>
+                <img className="rounded-xl shadow-lg" src={project.img} alt={`${project.header}'s image`}/>
               </div>
-            ))}
-            </div>
-        
-          }
-        </div>
-      )}
 
-      {(tabOpen && tab.has(2)) && (
-        <div className="bg-[rgba(0,0,0,0.5)] fixed h-full w-full z-1" onClick={removeTab}>
-          {
-            
-            <div index={2} className="max-w-[800px] max-h-[95vh] overflow-y-auto bg-white  m-5 " onClick={(e) => e.stopPropagation()}>
-            
-              <img src="/Images/CV_pdf.jpeg"/>
-            
-            
+              <p>
+                {project.description}
+              </p>
+
+              <div className="flex flex-row gap-2">
+                  <a href={project.github} className="text-black border-black border-[1px] border-solid rounded-xl p-2 hover:bg-black hover:text-white duration-300 ease-in-out">Github</a>
+                  <a href={project.website} className="text-black border-black border-[1px] border-solid rounded-xl p-2 hover:bg-black hover:text-white duration-300 ease-in-out">Website</a>
+              </div>
+
             </div>
-        
-          }
-        </div>
-      )}
+          ))}
+          </div>
+
+      </div>
+      {/* TAB 1 APPEARING FROM SIDE ON CLICK */}
+
+      <div className="fixed h-full w-full z-1 tabs" onClick={() => removeTab(1)}>
+        {
+          
+          <div className="max-w-[800px] h-[100vh] overflow-y-auto bg-white p-6" onClick={(e) => e.stopPropagation()}>
+
+          <div className="flex justify-between gap-2">
+            <h2>Education and Career</h2>
+            <h3 className="cursor-pointer" onClick={() => removeTab(1)}><b>X</b></h3>
+          </div>
+
+          {EduCareer.map( (edu, index) => (
+            <div className="flex gap-5 p-2 flex-col py-20 border-b-[2px] border-solid border-blue-900" key={index}>
+              <div className="flex flex-col sm:flex-row justify-between items-center">
+                <h3>{edu.title}</h3>
+                <i>{edu.year}</i>
+              </div>  
+              <div className="flex flex-row gap-2 flex-wrap">
+                {edu.tags.map((tag, i) => (
+                  <div key={i} className="text-black rounded-sm sm:rounded-4xl text-xs sm:text-baser p-1 sm:py-2 sm:px-5 bg-[#EBE9E2]">
+                    {tag}
+                  </div>
+                ))}
+              </div>
+              <p>
+                {edu.description}
+              </p>
+      
+            </div>
+          ))}
+          </div>
+      
+        }
+      </div>
+
+      {/* TAB 2 APPEARING FROM SIDE ON CLICK */}
+
+      <div className="fixed h-full w-full z-1 tabs" onClick={() => removeTab(2)}>
+        {<>
+          <div className="text-right bg-white max-w-[800px] p-1 cursor-pointer text-xs">X</div>
+          
+          <div className="max-w-[800px] h-[100vh] overflow-y-auto bg-white " onClick={(e) => e.stopPropagation()}>
+          
+            <img src="/Images/CV_pdf.jpeg"/>
+          
+          
+          </div>
+        </>
+        }
+      </div>
       
 
       {/* MAIN PAGE WITH TILES */}
@@ -177,7 +180,7 @@ export default function Home() {
           
         </div>
           
-        <div className="col-span-3 justify-between row-span-2 bg-[#9A9CD4]">
+        <div className="col-span-3 sm:col-span-2 lg:col-span-3 justify-between row-span-2 bg-[#9A9CD4]">
           <div className="flex flex-col gap-2">
             <div className="flex justify-between">
               <h2>Education</h2>
@@ -229,16 +232,17 @@ export default function Home() {
           <form className="flex justify-between flex-col h-80 gap-3">
             <div>
               <label id="name" htmlFor="name">Name</label>
-              <input type="text" id="name" name="email" placeholder="Enter Name"/>
+              <input className="w-full" type="text" id="name" name="email" placeholder="Enter Name"/>
             </div>
             <div>
               <label id="email" htmlFor="email">Email</label>
-              <input type="text" id="email" name="email" placeholder="Enter Name"/>
+              <input  className="w-full"type="text" id="email" name="email" placeholder="Enter Name"/>
             </div>
             <div className="grow ">
               <label id="message" htmlFor="message">Message</label>
-              <textarea type="text" id="message" name="message" placeholder="Enter Message"/>
+              <textarea  className="w-full"type="text" id="message" name="message" placeholder="Enter Message"/>
             </div>
+            <button className="badge cursor-pointer flex bg-[#6AB487] justify-center self-center">SEND</button>
           </form>
         </div>
 
@@ -271,7 +275,7 @@ export default function Home() {
           <div className="flex flex-col">
             <div className="flex justify-between">
               <h2>Career</h2>
-              <h2 className="glow">+</h2>
+              <h2 className="glow cursor-pointer" onClick={() => handleTab(1)}>+</h2>
             </div>
             <div className="flex gap-2 flex-col text-right">
               <div className="badge bg-[#68B1B6]">IT Support Analyst</div>
