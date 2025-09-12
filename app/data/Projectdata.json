@@ -1,9 +1,19 @@
 [
     {
-      "header": "Fadah Al Doha",
+      "header": "DevRim - [BETA]",
+      "description": "DevRim is a Medium style application with one major addition, Social Features! Users are able to follow their favourite authors and are able to form groups or talk to them directly. The application has a Blogs Side and a Messaging Platform with a completely unique UI. Share multimedia with your connections and share knowledge. Create your own lists and keep track on the latest trends in tech!",
+      "img": "/Images/DevRim_SS.png",
+      "techstack": ["MongoDB" , "ExpressJS" , "React" , "NodeJS", "AWS", "GSAP"],
+      "website": "https://devrim-seven.vercel.app/",
+      "github": "https://github.com/Wertasile/DevRim",
+      "client": "Personal Project",
+      "year": 2025
+    },
+    {
+      "header": "Fadah Al Doha - [DELIVERED TO CLIENT]",
       "description": "Application built for Client Fadah Al Doha, a Trading and Contracting Company. Pages designed for all of their Services and Products they supply along with contact capabilities.",
-      "img": "/Images/Fadah-Al-Doha-page.png",
-      "techstack": ["NextJS"],
+      "img": "/Images/FadahAlDoha_SS.jpg",
+      "techstack": ["NextJS", "Resend", "React-Email", "GSAP"],
       "website": "https://fadah-al-doha.vercel.app/",
       "github": "https://github.com/Wertasile/Troupe",
       "client": "Fadah Al Doha",
@@ -13,7 +23,7 @@
       "header": "Troupe",
       "description": "Chatting Application built using the MERN stack. Personal project built to learn Socket-io, Multimedia storage and sharing.",
       "img": "/Images/Troupe-page.jpg",
-      "techstack": ["MongoDB" , "ExpressJS" , "React" , "NodeJS"],
+      "techstack": ["MongoDB" , "ExpressJS" , "React" , "NodeJS", "Socket.io", "AWS S3"],
       "website": "https://troupe-nu.vercel.app/",
       "github": "https://github.com/Wertasile/Troupe",
       "client": "Personal Project",
@@ -21,8 +31,8 @@
     },
     {
       "header": "EasyNote",
-      "description": "Note Taking Application built using C# Blazor Web Assembly for the Frontend. Various AWS Services such as Lambda, API Gateway, Cognito, S3 were used for storage, authentication and api calls.",
-      "img": "/Images/aws-note-app.jpg",
+      "description": "Note Taking Application built using C# Blazor Web Assembly with basically CRUD features for note manipulation. Project is mainly a showcase of skills to use AWS services in tandem with component Frontend Frameworks. Various AWS Services such as Lambda, API Gateway, Cognito, S3 were used for storage, authentication and api calls using AWS SAM (Infrastructure as Code).",
+      "img": "/Images/EasyNote_SS.png",
       "techstack": ["Blazor WASM" ," AWS (BackEnd)"],
       "website": "https://eznoteapp.netlify.app/",
       "github": "https://github.com/Wertasile/EasyNote",
@@ -41,8 +51,8 @@
     },
     {
       "header": "Moviemania",
-      "description": "Movie Catalogue",
-      "img": "/Images/Moviemania-page.jpg",
+      "description": "One of my first projects, this is a movie catalogue application making use of TMDB API. Users can view all images, videos and even other shows related to the currently viewed movie/ TV-show. There are detailed metric of the product as well as Episodic and Seasonal details as well.",
+      "img": "/Images/Moviemania_SS.jpg",
       "techstack": ["JavaScript" , "TMDB-API"],
       "website": "https://wertasile.github.io/Movie-Web-Catalogue.github.io/",
       "github": "https://github.com/Wertasile/Movie-Web-Catalogue.github.io?tab=readme-ov-file",

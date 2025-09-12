@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Projectdata from './data/Projectdata.json'
 import EduCareer from './data/EduCareer.json'
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap"
+import Lenis from "lenis"
 
 export default function Home() {
 
@@ -14,7 +15,7 @@ export default function Home() {
 
   const [tab, setTab] = useState(null)
   const animationsRef = useRef(new Map())
-
+  
   useGSAP(() => {
     const tiles = gsap.utils.toArray(contentRef.current.children)
 
