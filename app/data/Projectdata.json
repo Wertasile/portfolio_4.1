@@ -1,6 +1,6 @@
 [
     {
-      "header": "DevRim - [BETA]",
+      "header": "DevRim",
       "description": "DevRim is a Medium style application with one major addition, Social Features! Users are able to follow their favourite authors and are able to form groups or talk to them directly. The application has a Blogs Side and a Messaging Platform with a completely unique UI. Share multimedia with your connections and share knowledge. Create your own lists and keep track on the latest trends in tech!",
       "img": "/Images/DevRim_SS.png",
       "techstack": ["MongoDB" , "ExpressJS" , "React" , "NodeJS", "AWS", "GSAP"],

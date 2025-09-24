@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #EBE9E2;
   --foreground: #171717;
@@ -11,6 +12,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+
+@theme {
+  --breakpoint-4xl: 118.75rem;
+  --breakpoint-md: 50.5rem;
+  --breakpoint-3xl: 107.375rem;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -28,7 +36,7 @@ body {
 
 h1{font-size: 4.75rem; }
 
-h2{font-size: 3rem;}
+h2{font-size: 3rem; font-weight: 600;}
 
 h3{font-size: 1.5rem;}
 
@@ -82,15 +90,56 @@ input, textarea{
   50%{
     text-shadow:  0 0 2px rgb(119, 119, 119),
                   0 0 5px rgb(119, 119, 119),
-                  0 0 8px rgb(119, 119, 119);
+                  0 0 12px rgb(119, 119, 119);
   }
   100%{text-shadow: none;}
 }
 
-@media screen and (max-width: 480px) {
-  h1{font-size: 2.75rem; }
+.primary-btn {
+    position: relative;
+    cursor: pointer;
+    background-color: #111; /* Base background */
+    padding: .4em 1.2em;
+    border: 1px solid #353535;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s;
+    color: #ffffffa4;
+    width: 150px;
+}
 
-  h2{font-size: 1.5rem;}
+.secondary-btn{
+  position: relative;
+  cursor: pointer;
+  background-color: #1f1e1e; /* Base background */
+  padding: .4em 1.2em;
+  border: 1px solid #353535;
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s;
+  color: #ffffffa4;
+  width: 100px;
+}
+
+/* Text shine effect */
+.primary-btn span {
+    color: #ffffffa4;
+    background: linear-gradient(120deg, #fff0 40%, rgba(255, 255, 255, 0.966), #fff0 60%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 5s linear infinite;
+}
+
+/* Hover background */
+.primary-btn:hover {
+    background-color: #181818;
+}
+
+@media screen and (max-width: 808px) {
+  h1{font-size: 2.5rem; }
+
+  h2{font-size: 1.4rem;}
 
   h3{font-size: 1.2rem;}
 
