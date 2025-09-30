@@ -2,8 +2,14 @@
     {
         "title":"Freelance Developer",
         "year":"June 2025 - Present",
-        "tags":["ReactJS"],
+        "tags":["ReactJS","NextJS","Node","AWS",".NET"],
         "description":"Working with local and Small Businesses with web solutions (websites and apps), helping them improve their reach and user engagement"
+    },
+    {
+        "title":"Fadah Al Doha",
+        "year":"July 2025 - August 2025",
+        "tags":["NextJS","GSAP","React-Email | Resend"],
+        "description":"Worked with Fadah Al Doha to design a Website for their business. Provides Listing of all products and services they provide along with projects delivered. Integrated ways to contact Company through the Website directly."
     },
     {
         "title":"IT Support Staff",
@@ -15,6 +21,6 @@
         "title":"Computer Engineering",
         "year":"June 2021-2024",
         "tags":["Web Development", "Mobile App Development", "Embedded Hardware and Control Systems (FPGA)", "Sensors and Networks", "High Performance Computers", "Advanced Mathematics"],
-        "description":"Achieved a First Class Bachelor's in Computer Engineering"
+        "description":"Achieved a First Class Bachelor's in Computer Engineering. Earned the Merit Awards as well as the IET Award from the Institute of Engineering and Technology. Learnt topics in relation to Networking, Hardware (FPGAs), Embedded Electronics and Sensors. Also had coursework in Computer Architectures, Operating Systems, and Linux. Well versed in Application Development (Java) and Web Development (React and .NET)."
     }
 ]
