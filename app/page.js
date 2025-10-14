@@ -90,7 +90,7 @@ export default function Home() {
 
               <div className="flex flex-wrap flex-row gap-2">
                 {project.techstack.map((tech, i) => (
-                  <div key={i} className="text-black rounded-4xl p-2 bg-[#EBE9E2]">
+                  <div key={i} className="text-black rounded-sm sm:rounded-4xl text-xs sm:text-baser p-1 sm:py-2 sm:px-5 bg-[#EBE9E2]">
                     {tech}
                   </div>
                 ))}
