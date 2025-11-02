@@ -5,9 +5,16 @@ import Projectdata from './data/Projectdata.json'
 import EduCareer from './data/EduCareer.json'
 import { useRef, useState, useEffect } from "react";
 
+import { Swiper, SwiperSlide } from "swiper/react"; // main container for slider
+import { Navigation, Pagination, Autoplay, Scrollbar, A11y } from 'swiper/modules';
+import "swiper/css";
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap"
 import Lenis from "lenis"
+import { DotIcon, MinusIcon } from "lucide-react";
 
 export default function Home() {
 
@@ -187,8 +194,8 @@ export default function Home() {
         
         { /* ---------------------------------------- EDUCATION TILE ---------------------------------------------- */ }
 
-        <div className="col-span-3 sm:col-span-2 lg:col-span-3 xl:col-span-2 2xl:col-span-2 4xl:col-span-3 flex flex-col justify-between row-span-2 bg-[#9A9CD4]">
-          <div className="flex flex-col justify-between gap-2">
+        <div className="col-span-3 rounded-3xl sm:col-span-2 lg:col-span-3 xl:col-span-2 2xl:col-span-2 4xl:col-span-3 flex flex-col justify-between row-span-2 bg-[#292B60]">
+          {/* <div className="flex flex-col justify-between gap-2">
             <div className="flex justify-between">
               <h2>Education</h2>
               <h2 className="glow cursor-pointer" onClick={() => handleTab(1)}>+</h2>
@@ -196,20 +203,53 @@ export default function Home() {
             <div className="flex flex-col gap-3">
               <h3>University of Greenwich</h3>
               <div className="flex flex-row flex-wrap gap-2 justify-right">
-                <div className="badge bg-[#7E81C8]">Computer Engineering</div>
-                <div className="badge bg-[#7E81C8]">First Class 4.0 GPA</div>
+                <div className="badge bg-[#303371]">Computer Engineering</div>
+                <div className="badge bg-[#303371]">First Class 4.0 GPA</div>
               </div>
             </div>  
           </div>
           
-          <div className="text-right">
-            <h1>6</h1>
-          </div>
+          <div className="flex mx-auto my-0">
+            <MinusIcon size={'48px'} color="gray"/>
+            <MinusIcon size={'48px'} color="gray"/>
+          </div> */}
+
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper rounded-3xl"
+          
+        >
+          <SwiperSlide className="">
+            <div className="flex justify-between p-5">
+              <div>hello</div>
+              <div>world</div>
+            </div>
+
+          </SwiperSlide>
+          <SwiperSlide className="">Slide 2</SwiperSlide>
+          <SwiperSlide>Slide 3</SwiperSlide>
+          <SwiperSlide>Slide 4</SwiperSlide>
+          <SwiperSlide>Slide 5</SwiperSlide>
+          <SwiperSlide>Slide 6</SwiperSlide>
+          <SwiperSlide>Slide 7</SwiperSlide>
+          <SwiperSlide>Slide 8</SwiperSlide>
+          <SwiperSlide>Slide 9</SwiperSlide>
+        </Swiper>
         </div>
 
         { /* ---------------------------------------- PROJECTS TILE ---------------------------------------------- */ }
 
-        <div className="col-span-3 sm:col-span-2 row-span-2 justify-between p-3 flex flex-col bg-[#91C6CA]">
+        <div className="col-span-3 sm:col-span-2 row-span-2 justify-between p-3 flex flex-col bg-[#306164]">
 
           <div className="flex flex-col">
             <div className="flex justify-between">
@@ -243,7 +283,7 @@ export default function Home() {
 
         { /* ---------------------------------------- CONTACT TILE ---------------------------------------------- */ }
 
-        <div className="col-span-3 row-span-3 md:col-span-2 lg:col-span-3 xl:col-span-2 2xl:row-span-1 4xl:row-span-2 4xl:col-span-3 bg-[#93C9A8]">
+        <div className="col-span-3 row-span-3 md:col-span-2 lg:col-span-3 xl:col-span-2 2xl:row-span-1 4xl:row-span-2 4xl:col-span-3 bg-[#31634C]">
           <h2>Contact Me!</h2>
           <form className="flex justify-between flex-col h-80 gap-3">
             <div>
@@ -258,34 +298,34 @@ export default function Home() {
               <label id="message" htmlFor="message">Message</label>
               <textarea  className="w-full"type="text" id="message" name="message" placeholder="Enter Message"/>
             </div>
-            <button className="badge cursor-pointer flex bg-[#6AB487] justify-center self-center">SEND</button>
+            <button className="badge cursor-pointer flex bg-[#3E7B5F] justify-center self-center">SEND</button>
           </form>
         </div>
 
         { /* ---------------------------------------- TECH STACK TILE ---------------------------------------------- */ }
 
-        <div className="col-span-3 sm:col-span-3 md:col-span-2 2xl:row-span-1 2xl:col-span-3 4xl:col-span-2 4xl:row-span-2 row-span-3 bg-[#91C6CA]">
+        <div className="col-span-3 sm:col-span-3 md:col-span-2 2xl:row-span-1 2xl:col-span-3 4xl:col-span-2 4xl:row-span-2 row-span-3 bg-[#306164]">
           <h2>Tech Stack</h2>
           <div className="flex flex-col gap-2">
-            <div className="badge bg-[#68B1B6]">ReactJS</div>
-            <div className="badge bg-[#68B1B6]">NextJS</div>
-            <div className="badge bg-[#68B1B6]">MongoDB</div>
-            <div className="badge bg-[#68B1B6]">AWS</div>
-            <div className="badge bg-[#68B1B6]">.NET Blazor</div>
-            <div className="badge bg-[#68B1B6]">Docker</div>
-            <div className="badge bg-[#68B1B6]">SQL Server</div>
+            <div className="badge bg-[#3C797D]">ReactJS</div>
+            <div className="badge bg-[#3C797D]">NextJS</div>
+            <div className="badge bg-[#3C797D]">MongoDB</div>
+            <div className="badge bg-[#3C797D]">AWS</div>
+            <div className="badge bg-[#3C797D]">.NET Blazor</div>
+            <div className="badge bg-[#3C797D]">Docker</div>
+            <div className="badge bg-[#3C797D]">SQL Server</div>
           </div>
         </div>
 
         { /* ---------------------------------------- ABOUT TILE ---------------------------------------------- */ }
 
-        <div className="col-span-3 row-span-3 md:col-span-2 lg:col-span-3 xl:col-span-4 xl:row-span-2 2xl:row-span-2 2xl:col-span-3 4xl:row-span-2 bg-[#E5A8DF] flex flex-col gap-2">
+        <div className="col-span-3 row-span-3 md:col-span-2 lg:col-span-3 xl:col-span-4 xl:row-span-2 2xl:row-span-2 2xl:col-span-3 4xl:row-span-2 bg-[#5B1B55] flex flex-col gap-2">
           <h2>About Me</h2>
-          <p className="text-justify">I am currently working as a Freelance Developer for SMEs and local businesses. I worked previously as an IT Support Staff which enhanced my communication skills,
+          <p className="text-justify text-white">I am currently working as a Freelance Developer for SMEs and local businesses. I worked previously as an IT Support Staff which enhanced my communication skills,
               Hardware and Software troubleshooting skills and I became familiar with Azure and IT Service Management Softwares. However, I always loved Coding and providing creative solutions,
               hence why I pursue my current path, gaining real world experience and looking to start my Career as a Developer in the Corporate World.
           </p>
-          <p className="text-justify">
+          <p className="text-justify text-white">
             While most of my experience comes from web and application Development, I also have worked with Embedded Systems and FPGAs as well as creation of Wireless Sensor Modules.
             I have a strong background in Advanced Mathematics having built digital filters.
           </p>
@@ -293,15 +333,15 @@ export default function Home() {
 
         { /* ---------------------------------------- CAREER TILE ---------------------------------------------- */ }
         
-        <div className="col-span-3 row-span-2 sm:col-span-3 md:col-span-2 2xl:col-span-3 2xl:row-span-1 4xl:row-span-1 4xl:col-span-2 bg-[#91C6CA]">
+        <div className="col-span-3 row-span-2 sm:col-span-3 md:col-span-2 2xl:col-span-3 2xl:row-span-1 4xl:row-span-1 4xl:col-span-2 bg-[#306164]">
           <div className="flex flex-col">
             <div className="flex justify-between">
               <h2>Career</h2>
               <h2 className="glow cursor-pointer" onClick={() => handleTab(1)}>+</h2>
             </div>
             <div className="flex gap-2 flex-col text-right">
-              <div className="badge bg-[#68B1B6]">IT Support Analyst</div>
-              <div className="badge bg-[#68B1B6]">Freelance Developer</div>
+              <div className="badge bg-[#3C797D]">IT Support Analyst</div>
+              <div className="badge bg-[#3C797D]">Freelance Developer</div>
             </div>  
           </div>
           
@@ -312,12 +352,12 @@ export default function Home() {
         
         { /* ---------------------------------------- SOCIAL TILE ---------------------------------------------- */ }
 
-        <div className="col-span-3 sm:col-span-3 md:col-span-2 3xl:col-span-3 4xl:col-span-2 row-span-1 bg-[#DFC202]">
+        <div className="col-span-3 sm:col-span-3 md:col-span-2 3xl:col-span-3 4xl:col-span-2 row-span-1 bg-[#B29B02]">
           <h2>Socials</h2>
           <div className="flex flex-row gap-3 ustify-between p-2">
-            <div className="text-black rounded-4xl py-2 px-3 sm:px-5 bg-[#EBD74F]"><a href="https://www.linkedin.com/in/ahmed-mohamed-haniffa-arfan-989267202/">LinkedIn</a></div>
-            <div className="text-black rounded-4xl py-2 px-3 sm:px-5 bg-[#EBD74F]"><a href="mailto:ahmedmharfan@gmail.com">Email</a></div>
-            <div className="text-black rounded-4xl py-2 px-3 sm:px-5 bg-[#EBD74F]"><a href="https://github.com/Wertasile">GitHub</a></div>
+            <div className="rounded-4xl py-2 px-3 sm:px-5 bg-[#72650D]"><a href="https://www.linkedin.com/in/ahmed-mohamed-haniffa-arfan-989267202/">LinkedIn</a></div>
+            <div className="rounded-4xl py-2 px-3 sm:px-5 bg-[#72650D]"><a href="mailto:ahmedmharfan@gmail.com">Email</a></div>
+            <div className="rounded-4xl py-2 px-3 sm:px-5 bg-[#72650D]"><a href="https://github.com/Wertasile">GitHub</a></div>
           </div>
         </div>
 

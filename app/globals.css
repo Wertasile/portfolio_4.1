@@ -2,8 +2,8 @@
 
 
 :root {
-  --background: #EBE9E2;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #FFF;
   box-sizing: border-box;
 }
 
@@ -40,10 +40,6 @@ h2{font-size: 3rem; font-weight: 600;}
 
 h3{font-size: 1.5rem;}
 
-p{
-  color: #353535;
-}
-
 .content-tiles{
   display: grid;
   gap: 16px;
@@ -53,8 +49,6 @@ p{
 }
 
 .content-tiles > div{
-  padding: 24px;
-  border-radius: 1rem;
   transition: transform ease-in-out 300ms ;
 }
 
@@ -67,8 +61,9 @@ label{display: none; height: 1px;}
 input, textarea{
   width: stretch;
   padding: 10px;
-  background-color: #6AB487;
-  border-radius: 1rem;
+  background-color: #3E7B5F;
+  border-radius: 0.5rem;
+  border: 1px solid #353535
 }
 
 .badge{
@@ -90,7 +85,7 @@ input, textarea{
   50%{
     text-shadow:  0 0 2px rgb(119, 119, 119),
                   0 0 5px rgb(119, 119, 119),
-                  0 0 12px rgb(119, 119, 119);
+                  0 0 15px rgb(119, 119, 119);
   }
   100%{text-shadow: none;}
 }
@@ -134,6 +129,29 @@ input, textarea{
 /* Hover background */
 .primary-btn:hover {
     background-color: #181818;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #444;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 808px) {
